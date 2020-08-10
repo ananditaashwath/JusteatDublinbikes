@@ -1,5 +1,5 @@
 '''Author:Anandita Ashwath
-        Description Gradient Boosting Model 
+        Description Gradient Boosting Model -Classification prediction
 '''
 
 
@@ -73,7 +73,7 @@ time_df[Help.PREVIOUS_PREDICTING_FACTOR] = time_df.apply(
     lambda row: row[Help.PREDICTING_FACTOR] if np.isnan(row[Help.PREVIOUS_PREDICTING_FACTOR]) else row[Help.PREVIOUS_PREDICTING_FACTOR],
     axis=1
 )
-# convert float64 columns to int64 columns, don't know why it converts numeric columns to float64
+# convert float64 columns to int64 columns, it converts numeric columns to float64
 time_df[Help.PREDICTING_FACTOR] = time_df[Help.PREDICTING_FACTOR].astype(np.int64)
 time_df[Help.PREVIOUS_PREDICTING_FACTOR] = time_df[Help.PREVIOUS_PREDICTING_FACTOR].astype(np.int64)
 
@@ -139,7 +139,7 @@ ax.set(title = 'Variable Importance',xlabel = 'Relative Importance')
 plt.yticks(pos, x.columns[sorted_idx])
 # set margins
 plt.subplots_adjust(left=0.2, right=0.9, top=0.95, bottom=0.1)
-fig.savefig("feature_importance.png")
+fig.savefig("feature_importance_gradient1.png")
 fig.clear()
 
 # after viewing feature importance, weather information doesn't impact the result
@@ -243,6 +243,6 @@ fig.text(0.5, 0.12, "Time", ha='center', va='center', fontsize="medium")
 fig.text(0.06, 0.5, "Mean Available Stands", ha='center', va='center', rotation='vertical', fontsize="medium")
 # plot the legend
 fig.legend(handles, labels, title="Color", loc='center', bbox_to_anchor=(0.5, 0.06, 0., 0.), ncol=4)
-fig.savefig("prediction_gradientboosting.png")
+fig.savefig("prediction_gradientboosting_new.png")
 fig.clear()
 

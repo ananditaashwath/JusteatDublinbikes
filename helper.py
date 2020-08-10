@@ -202,24 +202,3 @@ class Help:
         filter_df[Help.PREDICTING_FACTOR] = filter_df[Help.PREDICTING_FACTOR].round(0).astype(np.int64)
         filter_df[Help.PREVIOUS_PREDICTING_FACTOR] = filter_df[Help.PREVIOUS_PREDICTING_FACTOR].round(0).astype(np.int64)
 
-        #print(filter_df)
-        #print(filter_df.dtypes)
-        
-        bike_stands, available_stands, available_bikes, lat, lng, last_update = Help.retrieve_jcdecaux(station_number)
-        if (bike_stands == 0 and available_stands == 0) :
-            filter_df["last_update"] = saved_last_update
-            filter_df["Current Bike Stands"] = filter_df["Bike Stands"]
-        else:
-            filter_df["Latitude"] = lat
-            filter_df["Longitude"] = lng
-            #filter_df["Prev Bikes"] = available_bikes
-            filter_df[Help.PREVIOUS_PREDICTING_FACTOR] = available_stands
-            filter_df["Current Bike Stands"] = bike_stands
-            filter_df["last_update"] = pd.to_datetime(last_update, unit='ms', utc=True)
-
-        pred = model.predict(filter_df[Help.IMPORTANT_FACTORS]).round(0).astype(np.int64)[0]
-        old_bike_stands = filter_df["Bike Stands"].values[0]
-        curr_bike_stands = filter_df["Current Bike Stands"].values[0]
-        last_update = filter_df["last_update"].values[0]
-
-        return pred, old_bike_stands, curr_bike_stands, last_update

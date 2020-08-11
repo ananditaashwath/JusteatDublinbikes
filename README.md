@@ -1,4 +1,4 @@
-# JusteatDublinbikes
+# Just eat Dublinbikes
 Thesis of Data Science and Analytics course at National Univeristy of Ireland,Maynooth.
 Bike Sharing systems are gaining popularity in numerous cities to boost the use of green
 transportation. Management of bike rental schemes gives rise to numerous optimization

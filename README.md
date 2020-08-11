@@ -20,6 +20,7 @@ recommendations for re-balancing of bikes at a given location.
  Python version should be 3.7.0 or higher
  
  $python parser.py
+ 
  $python Datapreparation.py
  $python DataExploration.py
  $python Covid-19.py

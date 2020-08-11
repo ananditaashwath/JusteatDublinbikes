@@ -22,15 +22,25 @@ recommendations for re-balancing of bikes at a given location.
  $python parser.py
  
  $python Datapreparation.py
+ 
  $python DataExploration.py
+ 
  $python Covid-19.py
+ 
  $python Clustering.py
+ 
  $python cluster_map.py
+ 
  $python GradientBoostingModel.py
+ 
  $python GradientBoostingRegressor.py
+ 
  $python RandomForest.py
+ 
  $python Evaluation.py
+ 
  $python scraper.py
+ 
  #python helper.py (common functions are written here)
  
  # References
